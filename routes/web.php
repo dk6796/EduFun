@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\WritersController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,14 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/category', function () {
-    return view('pages.category');
-});
+Route::get('/aboutUs', [AboutUsController::class, 'about'])->name('about');
 
-Route::get('/aboutUs', function () {
-    return view('pages.about');
-});
+Route::get('/category', [CategoryController::class, 'category'])->name('category');
 
-Route::get('/writers', function() {
-    return view('pages.writers');
-});
+Route::get('/writers', [WritersController::class, 'writer'])->name('writer');
