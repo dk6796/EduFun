@@ -1,4 +1,4 @@
-@extends('/components/navbar')
+@extends('components.navbar')
 
 @section('title', 'Category')
 
