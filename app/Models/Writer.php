@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Writer extends Model
 {
     use HasFactory;
+
+    public function article(){
+        return $this->hasMany(Article::class, 'WriterID', 'id');
+    }
 }

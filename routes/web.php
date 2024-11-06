@@ -22,6 +22,11 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/aboutUs', [AboutUsController::class, 'about'])->name('about');
 
-Route::get('/category', [CategoryController::class, 'category'])->name('category');
+Route::get('/category-interactive', [CategoryController::class, 'interactive'])->name('interactive');
+
+Route::get('/category-software', [CategoryController::class, 'software'])->name('software');
+
+Route::get('/article/{id}', [CategoryController::class, 'getArticle'])->name('getArticle');
 
 Route::get('/writers', [WritersController::class, 'writer'])->name('writer');
+
