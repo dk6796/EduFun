@@ -38,6 +38,11 @@
      <div>
           @yield('content')
      </div>
+     <footer class="bg-black d-flex justify-content-center align-items-center p-4">
+          <div class="text-light">
+               &copy; EduFun 2024 | Web Programming | Daniel Kurniawan | 2602090164
+          </div>
+     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </html>
