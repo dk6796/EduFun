@@ -20,8 +20,29 @@
                               </button>
                          </h2>
                          <div id="collapse{{$w->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$w->id}}" data-bs-parent="#writerList">
-                              <div class="accordion-body">
-                                   <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <div class="accordion-body d-flex flex-column align-items-center gap-4 p-2">
+                                   @foreach ($articles as $a)
+                                        @if ($a->WriterID == $w->id)
+                                        <div class="d-flex gap-3 bg-light w-75  rounded-end">
+                                             <img src={{$a->ArticleImage}} alt="" style="width: 200px; height:150px">
+                                             <div class="d-flex flex-column gap-1 pt-4">
+                                                  <div class="d-flex justify-content-between align-items-center">
+                                                       <div class="" style="font-size:17px"><b>{{$a->subject->SubjectName}}</b></div>
+                                                       <div class="" style="font-size: 12px;">{{date("d F Y H:i", strtotime($a->created_at))}}</div>
+                                                  </div>
+                                                  <div class="" style="font-size:12px">by {{$a->writer->WriterName}}</div>
+                                                  <div class="d-flex justify-content-between pt-4 align-items-center gap-2">
+                                                       <div class="text-truncate" style="width: 460px; font-size:12px;">
+                                                            {{$a->ArticleContent}}
+                                                       </div>
+                                                       <a href="{{ route('getArticle', ['id' => $a->id]) }}" class="btn btn-info" style="font-size:10px;">
+                                                            Read More
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        @endif
+                                   @endforeach
                               </div>
                          </div>
                     </div>
