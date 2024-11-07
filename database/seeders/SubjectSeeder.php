@@ -22,8 +22,7 @@ class SubjectSeeder extends Seeder
             ],
             [
                 'CategoryID' => 1,
-                'SubjectName' => 'User 
-                Experience'
+                'SubjectName' => 'User Experience'
             ],
             [
                 'CategoryID' => 1,
